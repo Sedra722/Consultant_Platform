@@ -1,0 +1,415 @@
+{
+	"info": {
+		"_postman_id": "915da454-e711-4463-a2ba-e8b631014bc2",
+		"name": "multi_Authinication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Ash",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "Ash@gmail.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "Ash1244$$",
+									"type": "default"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "Ash1244$$",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/user/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "Ash@gmail.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "Ash1244$$",
+									"type": "default"
+								},
+								{
+									"key": "name",
+									"value": "lona",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "password-confirmation",
+									"value": "lona2f4ee",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/user/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMmNhYjRkMjQyNDgwNDZiN2E5NzUxMWJkNDA4OTQ2ZWNmMDcxMjMxMzg4NThlZDBlNjhlYmY1NmYyM2Q2ZDk2YTIyNDYzNDc5ZDU3ZDc3NGQiLCJpYXQiOjE2NzA1OTAzMzUuMDQ5MDg2LCJuYmYiOjE2NzA1OTAzMzUuMDQ5MDksImV4cCI6MTcwMjEyNjMzNC45NDY1MDYsInN1YiI6IjEiLCJzY29wZXMiOlsidXNlciJdfQ.Pv8cT2JNww7B-kVb_c9DTFZyvV-EwJL45QaVJWE_GaM2BOipAgpXVSRapVO8A7Jhz1jvdBwhOksC_4gkS3L_5Ofe8wV59_nkQ2aEdc0KFQ1K2EkrzfYcUwuezmD6cOPbym3_fTOghbKpIFZcNSTdAd379fl1l9saGW0kTIj-4dIDOYHG-M6LN0j6NGIhKtBRMjXXrkXeEPYwBSCW0zwU5rJGhsbbHWoD4swPrtvSXsktUBt_oFNRaIlUGhIRfnVmup034oa24KJSsOFvlWFVEn9f1cwTUvuWcBdJtxCOLtsDRo2BhrfHPlGS3VvsxAaFJbkmdho3jZ0xr7cJRf8mI5_Hlxc1KkYY7M8biYMWZw6816qhuFXXHWO4-Lan0aQWgTL-_jos9Wl9HDKn8QqwBnlaG1VTJkk6o3B2XT0Wg8OjSmEUQr-R00jn4Lbo463dTGCCxNr_25Ft1C29QQkaQUlMYsqEdiuRfUaRV-xxy-V6mIxpN9-onT-2LGZUvflcCwyViK_XY63ttMejIJGSR6t43fmvJUiJssDYjGoHizN9Czmx4JmGrWcHWvB8E9NSB3_-wtN12VQwemDbBIB1kKgMuYYAS4_W76MmG1St7O6Csm37GHnBLgk8glyGFcXLFqmPJSvsngF_xVAnNHKJYch0XcCwbF4IJEHCFwGvHj4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/user/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Expert",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Sedra",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "sedra@gmail.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "Alexandre",
+									"type": "default"
+								},
+								{
+									"key": "password-confirmation",
+									"value": "Alexandre",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/expert/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"expert",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiYmNhNzMxMzI2YjA1MzQ2NjBjNjc0N2JmN2QxZWFlMjgxYzA1Y2U4MTkzNDExODMyMzFkZDJkNzQwNmI2M2YzZjA5ZTEyMTc5NjcwNTM3MTEiLCJpYXQiOjE2NzA1ODg1MjguNjIwMjUzLCJuYmYiOjE2NzA1ODg1MjguNjIwMjYxLCJleHAiOjE3MDIxMjQ1MjguNTA2NjEsInN1YiI6IjgiLCJzY29wZXMiOlsiZXhwZXJ0Il19.kzrhY5w6Tx_asBdAPF1oFz1V8TzM45MYPj30y230Ak8elb28MFP77Zm_rwWtHzFEE1S1vsHRDO2Sem0Bnt8Shje91fC5DrjZY_mP2tYERrn6tVp8Ziq_oGUdfbWo7QYWjs1sn1TH1gV3-xR9zMITbkXiAe7G21KA11fhGq6peGe-lkX2WwZhzPgKqOd3Ru-OjSFM1hkCBNdem8uth12_pPGidU1J1HIRRmDeklc65M8MopKFnW9A2m0IJSV1MJfIbK_T6wkYvsLjYH-svPuL0R6UMA_TGwDPAYsZr62mQeduhkU-LjlZPEdbg6mWnMLbky29wGYEzxVagTzevfU6QZyvMR3GbQEDYuMzSK-LW0s0TcTcb7-Y9vryKKCACh-fq1nySvx4Bro408E_Adlrn72IG7HYjOmrYmKfGDYUJ9kxgg-SSAnotI1wzEBuYSDzzDUX2q2RY-jjPaqBQ-2kBBMUoqcKjrupcSUCc6bI33qzGPSudM18DCgCj80X8wV4iTVVWRjiVWDyrbXajPvI-aOYAZHlrq658BUKec0JHNoxXOvzEe0cb_4PBNqR-E7Uga9CXyeCelY49lFQBAJLqBi6ioZ4uJes-7SALIdLMqZvjVlNpqpTx0u150CEpChtvcZuTNQ8VMGrrp-ZBYfrAeXFi6LpjRvM73REkR6R67c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "sedra@gmail.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "Alexandre",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/expert/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"expert",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiOWU3NDIwOTYwOTgwZjczMGVkYmZjZTEzODk5OTQ0NGM0YmRmMjczMTZjMGMyOWUzN2FjMGUxNzU1MWQ4ZTNjM2ZlYzllOGMyMDJiZDI1YjgiLCJpYXQiOjE2NzA1ODk0MzAuMzI4MDU1LCJuYmYiOjE2NzA1ODk0MzAuMzI4MDU4LCJleHAiOjE3MDIxMjU0MzAuMTUzMzA2LCJzdWIiOiI4Iiwic2NvcGVzIjpbImV4cGVydCJdfQ.HN4fDiTtYSAjAZciQeoAbqdhGsPHT2R6NsCna0JrY5iXPcJJsu6trJecRLP53fbgJa-Pzc8eIZnC8uh0_ql3HvWxP1m442x08SjcDu_Dsf-5v3QPu4oLGmcMJmuW7_RFgXNojoHShTXi2ahnpExnCx6cAbLO6Kxfjrr4etrsO7oy_mBbGnQIVScFBnHEgnJ5yyURDN4zp7I2c7ty9e6lSDgj_vbs7BV2vKEWGOzqTvTph58HkvwEiJHEYc4uTQ5O4phCRHbMAl-GyL5iVxEhLQGj9c0drxZVrvBx0krREjRJnTiaIs4CXt0jzcjF0vHVaqGfnhY0Q9AG1DVoKxZ3Quayl72ZO0d1w_M9WNDCUsI1Gq14PWGSP1JVpQAGKXXO0XkFphaQ0Ht5UkqolraoCkSOFAcwI0cpAdmjaZpIqTWwEBRzt-_IXxE49xGr-97F8ZGx0s1ntpWweAatka-LgOd2Wavjjxluqc6eYyvQCG--dgcVREZSwmWAef580UUsWncCRbUKMJNespTf3v6yDRGIkQnIiXSVO65_4sKHQ3hNl8nHwcD5TUyU2e32NlaQ9CyaIVSaPrK255xwWv6ejA3o4S_VG7QnG-D0Nmj4CYAT5iNUT7x-EFZLdFf0iPo4TfOjYCcpyWdue2S6vVce9UvHwwzGvpyPi9MGR5BhL-A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/expert/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"expert",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGE0ODAzYTRiYWE1OTkxODhmYTI3MmNjMzU4NDU2ZTE5ZTY5Njg3ZTU1YTFiZjU0NzQyNGVjOWRkMjQ5MGIyYWYyMjkzMDllYzkxM2Q5ZTMiLCJpYXQiOjE2NzA2NzgxMjEuMDUwNjM4LCJuYmYiOjE2NzA2NzgxMjEuMDUwNjQxLCJleHAiOjE3MDIyMTQxMjAuOTM4MDk1LCJzdWIiOiIzIiwic2NvcGVzIjpbImV4cGVydCJdfQ.BL52OBk67WUSyuZQSbsssMUz5QjZ-HIGk9zzKbznMoHNXGP1oeiJVGD8G_kL6R5GIuYn5lA2UGEcRzNgV-nhoSGT--lzXu2HZLNwU5gUrKSgqTkSm6xag6qY2lsM3IeUp_rzSyRhluGTmiu0ibNKRf2MEXynEIdWgNn1su2Deq-cRyGjraURGfHKDuZtHClBeRPXcKLJREdpLYxHbzFhaX751-bQxuOJ6cOe2J77TV5qp4ZsQ8aoZyn38EWArmNeWUFqBirBO6Nl0noHpLMnkE-Kgl7_79bVjswqc4A5W1GsZzzkpT5Gqby4m3aAxJvWlf6sJ0S4zHiwNdJCMnI2Rlz7kGrCP3Qt7Xxu-yus0oUIxVug8kScIxT0BfYtZwAJ2nNm3GGwVYJ0G_Kjr_5CXrxKsJTx3ugiHJDbl6ruxs_K5awTX0tYf9TqmVkAXYLSKZguY-KtTSixOo87LCKI1JBGHAWTaSHI-BsfY1OQVIMyakP5e5NAe7AN18l6EB4qeg8KXf_lgaIuyS1SzTFgea1a2T62jjQkKs8FU0k_C4trMRSDyMn320Ofr4Xyt1A4DsNUftGVpmxycXxeZ95ngVOlxE5of2v4fXwXc2sY4nPfkf7eyE-FmeD7ph04L84NwQX0U7tzlTXHMIXWL-BuReqmbpmH5CmejpwqiK55npI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phone",
+									"value": "09124587456",
+									"type": "default"
+								},
+								{
+									"key": "address",
+									"value": "Damascus",
+									"type": "default"
+								},
+								{
+									"key": "workspace_name",
+									"value": "SLRcompany",
+									"type": "default"
+								},
+								{
+									"key": "years_of_experience",
+									"value": "6",
+									"type": "default"
+								},
+								{
+									"key": "category",
+									"value": "id:2,,name:medical_service",
+									"type": "default"
+								},
+								{
+									"key": "description",
+									"value": "work from home",
+									"type": "default"
+								},
+								{
+									"key": "category_id",
+									"value": "5",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/expert/update",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"expert",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

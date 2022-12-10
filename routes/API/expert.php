@@ -1,0 +1,22 @@
+<?php
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| is assigned the "api" middleware group. Enjoy building your API!
+|
+*/
+
+Route::post('expert/register'   ,   [AuthController::class ,'Expert_Register']);
+Route::post('expert/login'   ,      [AuthController::class ,'Expert_Login']);
+Route::group( ['prefix' => 'expert','middleware' => ['auth:expert-api','scopes:expert'] ], function(){
+       Route::post('update',[AuthController::class, 'Expert_Update']);
+       Route::post('logout',[AuthController::class, 'Expert_Logout']);
+});
