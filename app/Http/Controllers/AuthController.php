@@ -17,13 +17,14 @@ class AuthController extends Controller
     public function User_Register(Request $request)
     {
     #Check the validations rules
-       $Rules = Validator::make($request->all() , [
+       $Rules = Validator::make($request->all() , 
+        [
            'name' => ['required','string'] ,
-           'email'=> ['required','email:filter','max:255'] ,
+           'email'=> ['required','unique:experts,email','max:255'] ,
            'password' =>['required','string','min:8'],
-           'password_confirmation' => ['required_with:password|same:password|min:8']
 
-        ]);
+        ]
+          );
 
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
@@ -68,10 +69,10 @@ class AuthController extends Controller
     {
     #Check the validations rules
        $request->validate([
-            'email'=> ['required','email:filter','max:255'] ,
+            'email'=> ['required','max:255','unique:experts,email'] ,
             'name' => ['required','string'] ,
             'password' =>['required','string','min:8'],
-            'password_confirmation' => ['required_with:password|same:password|min:8']
+           // 'password_confirmation' => ['required_with:password|same:password|min:8']
 
         ]);
 
@@ -98,8 +99,9 @@ class AuthController extends Controller
             'phone' => ['required','string'] ,
             'address' =>['required','string','max:255'],
             'workspace_name' => ['required','string','max:255'],
-            'years_of_experience' => ['required','string','gt:5'],
+            'years_of_experience' => ['required','string'],
             'category'=>['required'],
+            'specialization'=>['required'],
             'description'=>['required','string']
         ]);
 
@@ -127,12 +129,12 @@ class AuthController extends Controller
 
            $expert->update([
                  'category_id' => $request->category_id,
-                 'phone' => $request->phone,
                  'address' => $request->address,
                  'phone' => $request->phone,
                  'workspace_name' => $request->workspace_name,
                  'years_of_experience' => $request->years_of_experience,
                  'category' => $request->category,
+                 'specialization' => $request->specialization,
                  'description' => $request->description,
                  // 'profile_image' => $profile_image
                ]);

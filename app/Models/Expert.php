@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Category;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -20,14 +21,15 @@ class Expert extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'category_id',
         'password',
+
+        'category_id',
         'profile_image',
         'phone',
         'address',
         'workspace_name',
         'years_of_experience',
-        'category',
+        'specialization',
         'description',
         'rating'
 
@@ -50,6 +52,10 @@ class Expert extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'category'=> 'array',
     ];
+    public function categories()
+    {
+        return $this->belongsTo(Category::class);
+
+    }
 }

@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SearchController;
+use App\Models\Expert;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,6 +18,13 @@ use App\Http\Controllers\AuthController;
 
 Route::post('expert/register'   ,   [AuthController::class ,'Expert_Register']);
 Route::post('expert/login'   ,      [AuthController::class ,'Expert_Login']);
+Route::get('/categories',[CategoryController::class, 'index']);
+Route::get('categories',[CategoryController::class, 'index']);
+Route::get('search',[SearchController::class, 'search']);
+
+
+
+
 Route::group( ['prefix' => 'expert','middleware' => ['auth:expert-api','scopes:expert'] ], function(){
        Route::post('update',[AuthController::class, 'Expert_Update']);
        Route::post('logout',[AuthController::class, 'Expert_Logout']);

@@ -18,14 +18,17 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->Integer('category_id')->unsigned()->nullable();;
+           $table->bigInteger('category_id')->unsigned()->nullable() ;// here is the probleme ;)
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->float('rating')->nullable();
+            $table->Integer('rating');
             $table->rememberToken();
             $table->timestamps();
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
 
+            $table->foreign('category_id')
+            ->references('id')
+            ->on('categories')
+            ->onDelete('cascade');
         });
     }
 
@@ -37,7 +40,5 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('experts');
-                    // $table->dropForeign('category_id');
-
     }
 };

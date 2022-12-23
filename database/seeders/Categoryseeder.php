@@ -15,11 +15,11 @@ class Categoryseeder extends Seeder
      */
     public function run()
     {
-        Category::create(['name'=>'medical_consultation']);
-        Category::create(['name'=>'family_consultation']);
-        Category::create(['name'=>'psychological_consultation']);
-        Category::create(['name'=>'professional_consultation']);
-        Category::create(['name'=>'buisness_and_managment_consultation']);
+    Category::create(['name'=>'medical_consultation', 'image' => (public_path('uploads/meme.jpg')) ]);
+    Category::create(['name'=>'family_consultation' , 'image' => (public_path('uploads/leen.jpg'))  ]);
+    Category::create(['name'=>'psychological_consultation' , 'image' => (public_path('uploads/woody.jpg')) ]);
+    Category::create(['name'=>'professional_consultation'  , 'image' => (public_path('uploads/rooa.jpg'))  ]);
+    Category::create(['name'=>'buisness_and_managment_consultation' ,  'image' => (public_path('uploads/lolo.jpg'))  ]);
     //
 }
 }

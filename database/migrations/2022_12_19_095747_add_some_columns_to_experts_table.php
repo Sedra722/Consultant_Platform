@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::table('experts', function (Blueprint $table) {
             $table->string('profile_image')->nullable();
-            $table->string('phone')->nullable();
+            $table->string('phone')->unique();
             $table->string('address')->nullable();
             $table->string('workspace_name')->nullable();
-            $table->integer('years_of_experience')->nullable();
-            $table->json('category')->nullable();
-            $table->mediumText('description')->nullable();
+            $table->integer('years_of_experience');
+            $table->string('specialization');
+            $table->mediumText('description');
         });
     }
 
@@ -37,9 +37,8 @@ return new class extends Migration
                                 'address',
                                 'workspace_name',
                                 'years_of_experience',
-                                'category',
+                                'specialization',
                                 'description']);
-
-                                });
+        });
     }
 };
