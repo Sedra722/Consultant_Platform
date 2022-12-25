@@ -59,3 +59,37 @@ class Expert extends Authenticatable
 
     }
 }
+
+
+// public function transactions()
+// {
+//     return $this->hasMany(ExpertWallet::class);
+// }
+
+// public function validTransactions()
+// {
+//     return $this->transactions()->where('status', 1);
+// }
+
+// public function credit()
+// {
+//     return $this->validTransactions()
+//                 ->where('type', 'credit')
+//                 ->sum('amount');
+// }
+// public function debit()
+// {
+//     return $this->validTransactions()
+//                 ->where('type', 'debit')
+//                 ->sum('amount');
+// }
+// public function balance()
+// {
+//     return $this->credit() - $this->debit();
+// }
+// public function allowWithdraw($amount) : bool
+// {
+//     return $this->balance() >= $amount;
+// }
+// }    
+// }

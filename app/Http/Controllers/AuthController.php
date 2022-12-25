@@ -96,7 +96,7 @@ class AuthController extends Controller
        $Rules = Validator::make($request->all() , [
             //'profile_image'=> ['image|mimes:jpg,png,jpeg,gif,svg|max:2048'] ,
             'category_id' => ['required'] ,
-            'phone' => ['required','string'] ,
+            'phone' => ['required','string','unique:experts,phone'] ,
             'address' =>['required','string','max:255'],
             'workspace_name' => ['required','string','max:255'],
             'years_of_experience' => ['required','string'],
@@ -112,6 +112,16 @@ class AuthController extends Controller
         }
 
         $expert = $request->user();
+        //remmber ther is an important gitub to seefor profuo=ile update photo
+         /* 
+mdinzahaq22
+/
+Appointment-System-Laravel
+Public
+
+
+
+         */
        // $request->hasFile('profile-image');
        // #validate the profile 
        // $validate_image = Validator::make($request->all(), [

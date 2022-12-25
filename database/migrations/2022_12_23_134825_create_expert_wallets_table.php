@@ -13,21 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('user_wallets', function (Blueprint $table) {
-          $table->unsignedBigInteger('user_id');
+        Schema::create('expert_wallets', function (Blueprint $table) {
+          $table->unsignedBigInteger('expert_id');
           $table->enum('type', ['credit', 'debit']);
           $table->decimal('amount', 10, 2)->default(0);
           $table->string('description')->nullable();
           $table->tinyInteger('status')->default(0)
                 ->comment('0=PENDING | 1=APPROVED | 2=REJECTED ');
-          $table->foreign('user_id')
+          $table->foreign('expert_id')
                 ->references('id')
-                ->on('users');
+                ->on('experts');
           $table->timestamps();
-      });
-           
-        }
-    
+      
+        });
+    }
 
     /**
      * Reverse the migrations.
@@ -36,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_wallets');
+        Schema::dropIfExists('expert_wallets');
     }
 };

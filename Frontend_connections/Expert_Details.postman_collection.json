@@ -1,0 +1,17 @@
+{
+	"info": {
+		"_postman_id": "6ac61bb4-41a3-4254-ae04-c1896dfe93cb",
+		"name": "Expert_Details",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "expert_details",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

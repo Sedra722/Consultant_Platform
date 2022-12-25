@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SearchController;
 use App\Models\Expert;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,7 +21,7 @@ Route::post('expert/register'   ,   [AuthController::class ,'Expert_Register']);
 Route::post('expert/login'   ,      [AuthController::class ,'Expert_Login']);
 Route::get('/categories',[CategoryController::class, 'index']);
 Route::get('categories',[CategoryController::class, 'index']);
-Route::get('search',[SearchController::class, 'search']);
+//Route::get('search',[SearchController::class, 'search']);
 
 
 

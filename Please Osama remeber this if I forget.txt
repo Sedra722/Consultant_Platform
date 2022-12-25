@@ -1,0 +1,12 @@
+#######
+Notes to add for the projct:
+1) Social Login using passport
+2) add image to the expert and the user
+3) setting times
+4) searching based on different attributes and remeber to sort by
+5)add logo
+6)imrove my cod eusing accessors
+7)security
+8)handle all exceptions that you forget 
+9) there are many topics that I SAVED IN mY FAVOURITS REMEMBER TO TAKE A LOOK AT
+10)remember to protect routes using passport clients 
