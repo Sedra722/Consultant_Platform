@@ -48,22 +48,12 @@ public function checkBalance()
      $user = auth()->user();
      return $user->balance();
 }
-public function Payment(Request $request)
+public function transfer()
 {
-    $quantitiy = $request(['quantitiy'])
-   $expert_balance = ExpertWallet::query()->select('amount') 
-   $user_balance = UserWallet::query()->select('amount') 
-    $payment = DB::transaction(function () {
-    DB::table('user_wallets')->where(['amount' =>$user_balance - $quantitiy]);
- 
-    DB::table('expert_wallets')->where(['amount' =>$expert_balance + $quantitiy]);
-     return response() -> json(['message' => ['Payment is done.']], 200);
-
-});
-   
+    DB::transaction(function(){
+      Wallet::where('id' ,1)->decrement('amount' ,100 )
+      Wallet::where('id' ,2)->decrement('amount' ,100 )
+})
 
 
-     $user = auth()->user();
-     return $user->balance();
-}
 }

@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserWallet extends Model
+class Wallet extends Model
 {
-    use HasFactory; 
-protected $fillable = [
+    use HasFactory;
+    protected $fillable = [
    'user_id',
+   'expert_id',
    'amount'
 ];
-
 }

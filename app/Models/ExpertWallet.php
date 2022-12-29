@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ExpertWallet extends Model
 {
     use HasFactory;
-   
+    protected $fillable = [
+   'expert_id',
+   'amount'
+];

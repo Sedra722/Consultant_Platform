@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('experts', function (Blueprint $table) {
             $table->string('profile_image')->nullable();
-            $table->string('phone')->unique();
+            $table->string('phone');
             $table->string('address')->nullable();
             $table->string('workspace_name')->nullable();
             $table->integer('years_of_experience');
